@@ -2,7 +2,7 @@ window.onload = document_ready;
 
 function display_data(data) {
     console.log(data);
-    element = document.getElementById("frame");
+    let element = document.getElementById("frame");
     element.style.backgroundColor = data.color;
     element.textContent = data.text;
 }
@@ -22,6 +22,11 @@ function send_request() {
 
 }
 
-function document_ready() {
+function button_clicked() {
     send_request();
+}
+
+function document_ready() {
+    let button = document.getElementById("send_button");
+    button.onclick = button_clicked;
 }
